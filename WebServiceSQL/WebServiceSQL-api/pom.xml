@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>cl.corfo.webServiceSQL.modules</groupId>
+	<artifactId>WebServiceSQL-api</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+	<name>WebServiceSQL API module</name>
+
+	<parent>
+		<artifactId>WebServiceSQL</artifactId>
+		<groupId>cl.corfo.webServiceSQL</groupId>
+		<version>0.0.1</version>
+	</parent>
+
+	<dependencies>		
+		<dependency>
+			<groupId>cl.seis.utils</groupId>
+			<artifactId>seis-jpa-utils</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cl.seis.utils</groupId>
+			<artifactId>seis-utils</artifactId>
+			<version>0.1</version>
+		</dependency>
+	</dependencies>
+
+</project>

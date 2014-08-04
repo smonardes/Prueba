@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>cl.corfo.webServiceSQL.modules</groupId>
+	<artifactId>WebServiceSQL-ejb</artifactId>
+	<version>0.1</version>
+	<name>WebServiceSQL-ejb</name>
+
+	<parent>
+		<artifactId>WebServiceSQL</artifactId>
+		<groupId>cl.corfo.webServiceSQL</groupId>
+		<version>0.0.1</version>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>webServiceSQL-services</finalName>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>cl.corfo.webServiceSQL.modules</groupId>
+			<artifactId>WebServiceSQL-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cl.seis.utils</groupId>
+			<artifactId>seis-jpa-utils</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<!-- The default profile skips all tests, though you can tune it to run 
+				just unit tests based on a custom pattern -->
+			<!-- Seperate profiles are provided for running all tests, including Arquillian 
+				tests that execute in the specified container -->
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.4.3</version>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
